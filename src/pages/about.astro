@@ -24,10 +24,9 @@ const goal = 3
         <title>{pageTitle}</title>
     </head>
     <body>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/blog">Blog</a>
-        <h1>{pageTitle}</h1>
+        <a class="font-medium text-blue-600 dark:test-blue-500 hover:underline px-2" href="/">Home</a>
+        <a class="font-medium text-blue-600 dark:test-blue-500 hover:underline px-2" href="/about">About</a>
+        <a class="font-medium text-blue-600 dark:test-blue-500 hover:underline px-2" href="/blog">Blog</a>
 
         <p>Here are a few facts about me:</p>
         <ul>
@@ -38,14 +37,14 @@ const goal = 3
             }
         </ul>
         <p>My skills are:</p>
-        <ul>
+        <ul class="list-disc list-inside px-3">
             {
-                skills.map(skill => <li>{skill}</li>)
+                skills.map(skill => <li class="font-bold">{skill}</li>)
             }
         </ul>
 
         { happy && <p>"I'm happy to be learning  Astro!!"</p> }
         { finished && <p>"I'm happy to be learning  Astro!!"</p> }
-        <p>{ goal ===3 ? "I have tree goals!" : "I don't have three goals" }</p>
+        <p>{ goal === 3 ? "I have tree goals!" : "I don't have three goals" }</p>
     </body>
 </html>
