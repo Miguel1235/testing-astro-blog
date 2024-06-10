@@ -1,4 +1,7 @@
 ---
+import Navigation from "../components/Navigation.astro"
+import Footer from  "../components/Footer.astro"
+
 const pageTitle = "Home"
 ---
 <html lang="en">
@@ -10,9 +13,8 @@ const pageTitle = "Home"
         <title>{pageTitle}</title>
     </head>
     <body>
-        <a class="font-medium text-blue-600 dark:test-blue-500 hover:underline px-2" href="/">{pageTitle}</a>
-        <a class="font-medium text-blue-600 dark:test-blue-500 hover:underline px-2" href="/about">About</a>
-        <a class="font-medium text-blue-600 dark:test-blue-500 hover:underline px-2" href="/blog">Blog</a>
+        <Navigation/>
         <h1 class="text-3xl font-bold">My first Astro site!!!</h1>
+        <Footer/>
     </body>
 </html>

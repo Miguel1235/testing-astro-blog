@@ -1,5 +1,6 @@
 ---
-import {loadId} from "astro/dist/vite-plugin-astro/utils";
+import Navigation from "../components/Navigation.astro"
+
 const pageTitle = "About Me"
 
 const identity = {
@@ -24,9 +25,7 @@ const goal = 3
         <title>{pageTitle}</title>
     </head>
     <body>
-        <a class="font-medium text-blue-600 dark:test-blue-500 hover:underline px-2" href="/">Home</a>
-        <a class="font-medium text-blue-600 dark:test-blue-500 hover:underline px-2" href="/about">About</a>
-        <a class="font-medium text-blue-600 dark:test-blue-500 hover:underline px-2" href="/blog">Blog</a>
+        <Navigation/>
 
         <p>Here are a few facts about me:</p>
         <ul>
