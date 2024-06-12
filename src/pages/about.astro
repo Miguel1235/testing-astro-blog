@@ -1,5 +1,6 @@
 ---
 import Navigation from "../components/Navigation.astro"
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const pageTitle = "About Me"
 
@@ -16,20 +17,11 @@ const happy = true
 const finished = false
 const goal = 3
 ---
-<html lang="en">
-    <head>
-        <meta charset="utf-8"/>
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
-        <meta name="viewport" content="width=device-width"/>
-        <meta name="generator" content={Astro.generator}/>
-        <title>{pageTitle}</title>
-    </head>
-    <body>
-        <Navigation/>
 
-        <p>Here are a few facts about me:</p>
+<BaseLayout pageTitle={pageTitle}>
+    <div class="text-center">
         <ul>
-            <li>My name is: {identity.firstName}</li>
+            <li>Name: {identity.firstName}</li>
             <li>I live in {identity.country} and I work as a {identity.occupation}</li>
             {
                 identity.hobbies.length >= 2 && <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
@@ -45,5 +37,5 @@ const goal = 3
         { happy && <p>"I'm happy to be learning  Astro!!"</p> }
         { finished && <p>"I'm happy to be learning  Astro!!"</p> }
         <p>{ goal === 3 ? "I have tree goals!" : "I don't have three goals" }</p>
-    </body>
-</html>
+    </div>
+</BaseLayout>
