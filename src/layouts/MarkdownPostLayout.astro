@@ -3,6 +3,12 @@ import BaseLayout from "./BaseLayout.astro";
 const {frontmatter} = Astro.props
 ---
 <BaseLayout pageTitle={frontmatter.title}>
+
+    <div class="sm:flex sm:justify-center">
+        {frontmatter.tags.map((tag) => (<a
+                class="flex-wrap py-1 px-3 mx-3 rounded-full border border-blue-500 hover:bg-blue-300 font-bold cursor-pointer"
+                href={`/tags/${tag}`}>{tag}</a>))}
+    </div>
     <p>Written by {frontmatter.author}</p>
     <p>Published on {frontmatter.pubDate.toString()}</p>
     <p>tags: {frontmatter.tags}</p>
