@@ -4,8 +4,7 @@ import Greeting from "../components/Greeting"
 const pageTitle = "Home"
 ---
 
-
 <BaseLayout pageTitle={pageTitle}>
-    <h1 class="text-3xl font-bold text-center">My first Astro site!!!</h1>
+    <h1 class="text-3xl font-bold sm:text-center px-4 m-4 font-mono">My first Astro site!!!</h1>
     <Greeting client:load messages={["Hi", "Hello", "Hey there"]}/>
 </BaseLayout>
