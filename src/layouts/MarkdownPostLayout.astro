@@ -4,13 +4,15 @@ const {frontmatter} = Astro.props
 ---
 <BaseLayout pageTitle={frontmatter.title}>
 
-    <div class="sm:flex sm:justify-center">
+    <div class="flex flex-wrap sm:flex-nowrap sm:justify-center m-4 gap-2">
         {frontmatter.tags.map((tag) => (<a
                 class="flex-wrap py-1 px-3 mx-3 rounded-full border border-blue-500 hover:bg-blue-300 font-bold cursor-pointer"
                 href={`/tags/${tag}`}>{tag}</a>))}
     </div>
-    <p>Written by {frontmatter.author}</p>
-    <p>Published on {frontmatter.pubDate.toString()}</p>
-    <p>tags: {frontmatter.tags}</p>
-    <slot/>
+    <p class="sm:text-center mx-4">Written by {frontmatter.author}</p>
+    <p class="sm:text-center mx-4">Published on {frontmatter.pubDate.toString()}</p>
+    <p class="sm:text-center mx-4">tags: {frontmatter.tags}</p>
+    <div class="sm:text-center mx-4 my-4">
+        <slot/>
+    </div>
 </BaseLayout>

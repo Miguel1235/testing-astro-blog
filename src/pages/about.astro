@@ -19,9 +19,9 @@ const goal = 3
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <div class="text-center">
-        <ul>
-            <li>Name: {identity.firstName}</li>
+    <div class="sm:text-center px-4">
+        <ul class="py-4">
+            <li class="py-4">Name: {identity.firstName}</li>
             <li>I live in {identity.country} and I work as a {identity.occupation}</li>
             {
                 identity.hobbies.length >= 2 && <li>Two of my hobbies are: {identity.hobbies[0]} and {identity.hobbies[1]}</li>
@@ -33,9 +33,8 @@ const goal = 3
                 skills.map(skill => <li class="font-bold">{skill}</li>)
             }
         </ul>
-
-        { happy && <p>"I'm happy to be learning  Astro!!"</p> }
-        { finished && <p>"I'm happy to be learning  Astro!!"</p> }
+        { happy && <p class="py-4">"I'm happy to be learning  Astro!!"</p> }
+        { finished && <p class="py-4">"I'm happy to be learning  Astro!!"</p> }
         <p>{ goal === 3 ? "I have tree goals!" : "I don't have three goals" }</p>
     </div>
 </BaseLayout>
